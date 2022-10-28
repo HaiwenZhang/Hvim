@@ -15,6 +15,7 @@ set mouse=a
 set guifont="FiraCode Nerd Font":h20
 set hlsearch
 set incsearch
+set signcolumn=yes
 
 let mapleader = "\<SPACE>"
 
@@ -33,6 +34,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Auto pair
   Plug 'jiangmiao/auto-pairs'
+
+  " Rainbow Parentheses
+  Plug 'luochen1990/rainbow'
   
   " airline
   Plug 'vim-airline/vim-airline'
@@ -43,6 +47,7 @@ call plug#begin('~/.config/nvim/plugged')
   
   " file explorer
   Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 
   " file finder
   Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
@@ -50,10 +55,17 @@ call plug#begin('~/.config/nvim/plugged')
   " highlight
   Plug 'morhetz/gruvbox'
   Plug 'jackguo380/vim-lsp-cxx-highlight'
-  
+
+  " git
+  Plug 'airblade/vim-gitgutter' 
+  Plug 'tpope/vim-fugitive'
+
   " lsp
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  
+
+  " JavaScript/TypeScript
+  Plug 'HerringtonDarkholme/yats.vim'
+
 call plug#end()
 " =======================
 " ===   plugins  end  ===
@@ -79,10 +91,25 @@ vmap <LEADER>cn g>
 nmap <LEADER>cu g<c
 vmap <LEADER>cu g<
 
+" ==== luochen1990/rainbow ====
+let g:rainbow_active = 1
 
 " ==== preservim/nerdtree ====
-
 nnoremap <LEADER>e :NERDTreeToggle<CR>
+
+" ==== Xuyuanp/nerdtree-git-plugin ====
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 
 " ==== Yggdroot/LeaderF ====
@@ -127,6 +154,20 @@ hi default link LspCxxHlSymEnumMember cxxEnumMember
 hi default link LspCxxHlSymParameter cxxParameter
 hi default link LspCxxHlSymClass cxxTypeAlias
 
+
+" ==== airblade/vim-gitgutter ====
+" TODO change keymap
+nmap ]h <Plug>(GitGutterNextHunk) "same as default
+nmap [h <Plug>(GitGutterPrevHunk) "same as default
+
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '-'
+let g:gitgutter_sign_modified_removed = '-'
 
 " ==== neoclide/coc.nvim ====
 
