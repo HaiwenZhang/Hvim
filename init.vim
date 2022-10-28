@@ -18,7 +18,6 @@ set incsearch
 
 let mapleader = "\<SPACE>"
 
-
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   :exe '!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
               \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -31,6 +30,9 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
   Plug 'liuchengxu/vim-which-key'
+
+  " Auto pair
+  Plug 'jiangmiao/auto-pairs'
   
   " airline
   Plug 'vim-airline/vim-airline'
