@@ -12,7 +12,7 @@ set ignorecase
 set smartcase
 set notimeout
 set mouse=a
-set guifont=Monaco:h18
+set guifont="FiraCode Nerd Font":h20
 set hlsearch
 set incsearch
 
