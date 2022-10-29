@@ -26,7 +26,23 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- increment/decrement numbers
+keymap("n", "<leader>+", "<C-a>", opts) -- increment
+keymap("n", "<leader>-", "<C-x>", opts) -- decrement
+
+-- window management
+keymap("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
+keymap("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
+keymap("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
+keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split window
+
+keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
+keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
+keymap("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
+keymap("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
+
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -37,6 +53,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-d>", ":bdelete<CR>", opts)
 
 
 -- Insert --
