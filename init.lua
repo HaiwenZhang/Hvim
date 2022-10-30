@@ -15,6 +15,8 @@ require "haiwen.plugins.hop"
 require "haiwen.plugins.bankline"
 require "haiwen.plugins.alpha"
 require "haiwen.plugins.gitsigns"
+require "haiwen.plugins.neogit"
+require "haiwen.plugins.which-key"
 
 
 

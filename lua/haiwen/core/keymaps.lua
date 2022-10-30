@@ -88,3 +88,6 @@ keymap("n", "<leader>hc", "<cmd>HopChar1<cr>",opts)
 keymap("n", "<leader>hl", "<cmd>HopLine<cr>",opts)
 keymap("n", "<leader>hs", "<cmd>HopPattern<cr>",opts)
 
+-- neogit --
+keymap("n", "<leader>g", "<cmd>Neogit<cr>", opts)
+
