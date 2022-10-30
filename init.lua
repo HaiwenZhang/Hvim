@@ -12,6 +12,7 @@ require "haiwen.plugins.nvim-cmp"
 require "haiwen.plugins.nvim-tree"
 require "haiwen.plugins.surround"
 require "haiwen.plugins.hop"
+require "haiwen.plugins.bankline"
 
 
 

@@ -96,6 +96,8 @@ return packer.startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2'
   })
+  -- indent-blankline
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
