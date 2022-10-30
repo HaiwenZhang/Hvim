@@ -88,6 +88,15 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
 
+  -- nvim-surround
+  use "kylechui/nvim-surround"
+
+  -- hop
+  use({
+    'phaazon/hop.nvim',
+    branch = 'v2'
+  })
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
