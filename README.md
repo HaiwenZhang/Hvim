@@ -1,20 +1,18 @@
 # Haiwen Nvim config user guide
 
 
-## COC
+## LSP
 
 Create compile_commands.json for c/c++ auto complete
 
-- cmake
+- cmake project
 ``` bash
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -B .vscode ./
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 
 ```
 
-- make
-
+- make project
 ``` bash
-cd .vscode
-bear -- make -jn -C ..
-
+make clean
+bear -- make 
 ```

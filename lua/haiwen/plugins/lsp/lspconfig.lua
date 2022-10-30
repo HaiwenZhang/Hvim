@@ -55,3 +55,36 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+lspconfig['sumneko_lua'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig['clangd'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = { "clangd" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  single_file_support = true
+}
+
+lspconfig['tsserver'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig['pyright'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig['html'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+lspconfig['cssls'].setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
