@@ -13,6 +13,8 @@ require "haiwen.plugins.nvim-tree"
 require "haiwen.plugins.surround"
 require "haiwen.plugins.hop"
 require "haiwen.plugins.bankline"
+require "haiwen.plugins.alpha"
+require "haiwen.plugins.gitsigns"
 
 
 

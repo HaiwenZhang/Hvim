@@ -43,7 +43,6 @@ keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 keymap("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 keymap("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -82,4 +81,10 @@ keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(requir
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+
+-- Hop --
+keymap("n", "<leader>hw", "<cmd>HopWord<cr>",opts)
+keymap("n", "<leader>hc", "<cmd>HopChar1<cr>",opts)
+keymap("n", "<leader>hl", "<cmd>HopLine<cr>",opts)
+keymap("n", "<leader>hs", "<cmd>HopPattern<cr>",opts)
 

@@ -1,3 +1,12 @@
+-- keymap
+-- o 打开关闭文件夹
+-- a 创建文件
+-- r 重命名
+-- x 剪切
+-- c 拷贝
+-- p 粘贴
+-- d 删除
+
 local status_ok, nvimtree = pcall(require, "nvim-tree")
 if not status_ok then
   return
