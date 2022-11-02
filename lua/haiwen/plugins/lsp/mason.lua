@@ -17,6 +17,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"tsserver",
 		"html",
+    "emmet_ls",
 		"cssls",
 		"sumneko_lua",
     "clangd",

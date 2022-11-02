@@ -1,7 +1,10 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
   ensure_installed = "all",
-  sync_install = false, 
+  sync_install = false,
+  autotag = {
+    enable = true,
+  },
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension

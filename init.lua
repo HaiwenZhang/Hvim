@@ -17,6 +17,7 @@ require "haiwen.plugins.alpha"
 require "haiwen.plugins.gitsigns"
 require "haiwen.plugins.neogit"
 require "haiwen.plugins.which-key"
+require "haiwen.plugins.nvim-ts-autotag"
 
 
 
