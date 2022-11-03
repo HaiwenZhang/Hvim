@@ -59,6 +59,12 @@ keymap("n", "<S-d>", ":bdelete<CR>", opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
+-- clear search highlights
+keymap("n", "<leader>nh", ":nohl<CR>", opts)
+
+-- delete single character without copying into register
+keymap("n", "x", '"_x', opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
