@@ -91,3 +91,6 @@ keymap("n", "<leader>hs", "<cmd>HopPattern<cr>",opts)
 -- neogit --
 keymap("n", "<leader>g", "<cmd>Neogit<cr>", opts)
 
+-- symbolsoutline --
+keymap("n", "<leader>fs", "<cmd>SymbolsOutlineOpen<cr>", opts)
+
