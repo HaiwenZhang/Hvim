@@ -19,6 +19,7 @@ require "haiwen.plugins.neogit"
 require "haiwen.plugins.which-key"
 require "haiwen.plugins.nvim-ts-autotag"
 require "haiwen.plugins.symbols-outline"
+require "haiwen.plugins.colorizer"
 
 -- LSP
 require "haiwen.plugins.lsp.mason"

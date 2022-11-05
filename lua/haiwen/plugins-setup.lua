@@ -114,6 +114,9 @@ return packer.startup(function(use)
   -- symbols-outline
   use 'simrat39/symbols-outline.nvim'
 
+  --  nvim-colorizer
+  use 'norcalli/nvim-colorizer.lua'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
