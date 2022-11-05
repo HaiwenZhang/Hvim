@@ -3,9 +3,8 @@ if not status_ok then
   return
 end
 
-
-
 local actions = require "telescope.actions"
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -79,4 +78,27 @@ telescope.setup {
       },
     },
   },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          ["<C-w>"] = function() vim.cmd('normal vbd') end,
+          ["<C-h>"] = fb_actions.goto_home_dir,
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+          ["N"] = fb_actions.create,
+          ["h"] = fb_actions.goto_parent_dir,
+          ["/"] = function()
+            vim.cmd('startinsert')
+          end
+        },
+      },
+    },
+  },
 }
+
+telescope.load_extension("file_browser")

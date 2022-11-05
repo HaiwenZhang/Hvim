@@ -87,6 +87,7 @@ keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(requir
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+keymap("n", "<leader>sf", "<cmd>Telescope file_browser<cr>", opts)
 
 -- Hop --
 keymap("n", "<leader>hw", "<cmd>HopWord<cr>",opts)
