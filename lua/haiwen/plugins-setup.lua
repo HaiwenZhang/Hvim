@@ -51,8 +51,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
 
   -- colorscheme
-  use "navarasu/onedark.nvim"
-  use "ellisonleao/gruvbox.nvim"
+  use 'folke/tokyonight.nvim'
   use "nvim-lualine/lualine.nvim"
   use "akinsho/bufferline.nvim"
 
