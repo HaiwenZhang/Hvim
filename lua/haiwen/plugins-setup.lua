@@ -11,6 +11,7 @@ local ensure_packer = function()
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
+
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
 vim.cmd([[ 
@@ -51,6 +52,7 @@ return packer.startup(function(use)
 
   -- colorscheme
   use "navarasu/onedark.nvim"
+  use "ellisonleao/gruvbox.nvim"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/bufferline.nvim"
 
