@@ -105,3 +105,6 @@ keymap("n", "<leader>g", "<cmd>Neogit<cr>", opts)
 -- symbolsoutline --
 keymap("n", "<leader>fs", "<cmd>SymbolsOutlineOpen<cr>", opts)
 
+-- toggleterm --
+keymap("n", "<leader>st", "<cmd>ToggleTerm<cr>", opts)
+
