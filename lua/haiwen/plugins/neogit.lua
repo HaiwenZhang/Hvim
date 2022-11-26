@@ -48,13 +48,13 @@ neogit.setup {
   -- Setting any section to `false` will make the section not render at all
   sections = {
     untracked = {
-      folded = false
+      folded = true
     },
     unstaged = {
-      folded = false
+      folded = true
     },
     staged = {
-      folded = false
+      folded = true
     },
     stashes = {
       folded = true
@@ -63,7 +63,7 @@ neogit.setup {
       folded = true
     },
     unmerged = {
-      folded = false
+      folded = true
     },
     recent = {
       folded = true
