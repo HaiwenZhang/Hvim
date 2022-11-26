@@ -21,6 +21,7 @@ require "haiwen.plugins.nvim-ts-autotag"
 require "haiwen.plugins.symbols-outline"
 require "haiwen.plugins.colorizer"
 -- require "haiwen.plugins.toggleterm"
+require "haiwen.plugins.diffview"
 
 -- LSP
 require "haiwen.plugins.lsp.mason"
