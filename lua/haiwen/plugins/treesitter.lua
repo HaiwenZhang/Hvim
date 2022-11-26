@@ -1,6 +1,9 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup {
-  ensure_installed = "all",
+  ensure_installed = {
+    'bash', 'c', 'cpp', 'css', 'html', 'javascript', 'json', 'lua', 'python',
+    'rust', 'typescript', 'vim', 'yaml',
+  },
   sync_install = false,
   autotag = {
     enable = true,

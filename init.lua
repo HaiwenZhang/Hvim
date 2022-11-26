@@ -20,7 +20,7 @@ require "haiwen.plugins.which-key"
 require "haiwen.plugins.nvim-ts-autotag"
 require "haiwen.plugins.symbols-outline"
 require "haiwen.plugins.colorizer"
-require "haiwen.plugins.toggleterm"
+-- require "haiwen.plugins.toggleterm"
 
 -- LSP
 require "haiwen.plugins.lsp.mason"
