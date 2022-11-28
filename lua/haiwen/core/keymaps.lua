@@ -29,6 +29,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- save file
 keymap("n", "zz", ":w<CR>", opts)
 keymap("n", "zq", ":x<CR>", opts)
+keymap("n", "<leader>q", ":q<CR>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
