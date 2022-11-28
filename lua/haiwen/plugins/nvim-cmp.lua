@@ -16,6 +16,36 @@ if not lspkind_status then
 	return
 end
 
+lspkind.init({
+ symbol_map = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "ﰠ",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "塞",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = " ",
+      File = " ",
+      Reference = "",
+      Folder = " ",
+      EnumMember = "",
+      Constant = "",
+      Struct = " ",
+      Event = "",
+      Operator = " ",
+      TypeParameter = " "
+    },
+})
+
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -28,10 +58,10 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-		["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-		["<C-b>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+		["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
+		["<C-k>"] = cmp.mapping.scroll_docs(-4),
+		["<C-j>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 		["<C-e>"] = cmp.mapping.abort(), -- close completion window
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
@@ -62,6 +92,7 @@ cmp.setup({
       "s",
     }),
 	}),
+
 	-- sources for autocompletion
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" }, -- lsp
@@ -72,6 +103,7 @@ cmp.setup({
 	-- configure lspkind for vs-code like icons
 	formatting = {
 		format = lspkind.cmp_format({
+      mode = 'symbol',
 			maxwidth = 50,
 			ellipsis_char = "...",
 		}),
