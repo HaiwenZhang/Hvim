@@ -52,6 +52,9 @@ return packer.startup(function(use)
 
   -- colorscheme
   use 'folke/tokyonight.nvim'
+  use "olimorris/onedarkpro.nvim"
+
+  -- lualine
   use "nvim-lualine/lualine.nvim"
   use "akinsho/bufferline.nvim"
 
@@ -82,6 +85,17 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
+
+  -- debugger
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use {
+    "sakhnik/nvim-gdb",
+    run = "./install.sh"
+  }
+
 
   -- Treesitter
   use {

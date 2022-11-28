@@ -1,6 +1,5 @@
 require "haiwen.plugins-setup"
 require "haiwen.core.options"
-require "haiwen.core.keymaps"
 require "haiwen.core.colorscheme"
 require "haiwen.plugins.lualine"
 require "haiwen.plugins.bufferline"
@@ -27,3 +26,7 @@ require "haiwen.plugins.toggleterm"
 require "haiwen.plugins.lsp.mason"
 require "haiwen.plugins.lsp.lspconfig"
 require "haiwen.plugins.lsp.lspsaga"
+
+
+-- Keymap
+require "haiwen.core.keymaps"

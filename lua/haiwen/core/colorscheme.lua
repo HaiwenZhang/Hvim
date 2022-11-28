@@ -1,6 +1,12 @@
 
-require("tokyonight").setup({
-  style = "storm",
+-- require("tokyonight").setup({
+--   style = "storm",
+-- })
+--
+-- vim.cmd[[colorscheme tokyonight]]
+--
+require('onedarkpro').setup({
+  theme = 'onedark_vivid',
 })
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd("colorscheme onedarkpro")
