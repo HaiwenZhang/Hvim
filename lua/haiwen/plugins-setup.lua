@@ -61,15 +61,18 @@ return packer.startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use "SmiteshP/nvim-navic"
+  use "b0o/schemastore.nvim"
 	use "jose-elias-alvarez/typescript.nvim" -- additional functionality for typescript server (e.g. rename file & update imports)
 	use "onsails/lspkind.nvim" -- vs-code like icons for autocompletion
   use "kosayoda/nvim-lightbulb" -- code action
   use "ray-x/lsp_signature.nvim" -- show function signature when typing
+  use "folke/neodev.nvim"
   use 'jose-elias-alvarez/null-ls.nvim'
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- completion
   use 'hrsh7th/nvim-cmp'

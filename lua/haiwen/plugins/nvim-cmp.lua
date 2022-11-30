@@ -16,34 +16,11 @@ if not lspkind_status then
 	return
 end
 
+
+icons = require("haiwen.core.icons")
+
 lspkind.init({
- symbol_map = {
-      Text = "",
-      Method = "",
-      Function = "",
-      Constructor = "",
-      Field = "ﰠ",
-      Variable = "",
-      Class = "ﴯ",
-      Interface = "",
-      Module = "",
-      Property = "ﰠ",
-      Unit = "塞",
-      Value = "",
-      Enum = "",
-      Keyword = "",
-      Snippet = "",
-      Color = " ",
-      File = " ",
-      Reference = "",
-      Folder = " ",
-      EnumMember = "",
-      Constant = "",
-      Struct = " ",
-      Event = "",
-      Operator = " ",
-      TypeParameter = " "
-    },
+ symbol_map = icons.kind,
 })
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
