@@ -23,10 +23,11 @@ require "haiwen.plugins.diffview"
 require "haiwen.plugins.toggleterm"
 require "haiwen.plugins.impatient"
 
--- LSP
 require "haiwen.plugins.lsp.mason"
 require "haiwen.plugins.lsp.lspconfig"
 require "haiwen.plugins.lsp.lspsaga"
+
+require "haiwen.plugins.dap"
 
 
 -- Keymap

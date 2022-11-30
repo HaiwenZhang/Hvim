@@ -111,22 +111,18 @@ keymap("n", "<leader>fs", "<cmd>SymbolsOutlineOpen<cr>", opts)
 keymap("n", "<leader>st", "<md>ToggleTerm<cr>", opts)
 
 -- dap --
-keymap("n", "<F5>", "<cmd>lua require'dap'.contine()<cr>", opts)
+keymap("n", "<F5>", "<cmd>DapContinue<cr>", opts)
 keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>dc", "<cmd>DapContinue<cr>", opts)
+keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<leader>dt", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>lua require'dap'.run_to_cursor()<cr>", opts)
 keymap("n", "<leader>dR", "<cmd>lua require'dap'.clear_breakpoints()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
 keymap("n", "<leader>dp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", opts)
 keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-
-
--- nvim-gdb --
-keymap("n", "<leader>dg", "<cmd>GdbStart gdbr<cr>", opts)
-keymap("n", "<leader>dd", "<cmd>lua StartGdbSession()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua CreateWatch()<cr>", opts)
-keymap("n", "<leader>dbt", "<cmd>GdbLopenBacktrace<cr>", opts)
-keymap("n", "<leader>dbp", "<cmd>GdbLopenBreakpoints<cr>", opts)
