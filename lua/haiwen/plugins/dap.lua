@@ -8,6 +8,11 @@ if not dap_ui_status_ok then
   return
 end
 
+local mason_nvim_dap_status, mason_nvim_dap = pcall(require, "mason-nvim-dap")
+if not mason_nvim_dap_status then
+  return
+end
+
 -- dapui.setup()
 dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
@@ -79,23 +84,34 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close {}
 end
 
+mason_nvim_dap.setup({
+ ensure_installed = { "python", "lldb", },
+ automatic_setup = true,
+})
 
-dap.configurations.python = {
-  {
-    type = 'python';
-    request = 'launch';
-    name = "Launch file";
-    program = "${file}";
-    pythonPath = function()
-      return '/usr/bin/python'
-    end;
-  },
+
+mason_nvim_dap.setup_handlers {
+  function(source_name)
+    require('mason-nvim-dap.automatic_setup')(source_name)
+  end,
+  python = function(source_name)
+    dap.adapters.python = {
+      type = "executable",
+      command = "/usr/bin/python3",
+      args = {
+        "-m",
+        "debugpy.adapter",
+      },
+    }
+
+    dap.configurations.python = {
+      {
+        type = "python",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}", -- This configuration will launch the current file if used.
+      },
+    }
+  end,
 }
-
-dap.adapters.python = {
-  type = 'executable';
-  command = '/usr/bin/python';
-  args = { '-m', 'debugpy.adapter' };
-}
-
 
