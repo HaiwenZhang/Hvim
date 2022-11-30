@@ -26,6 +26,12 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Resize with arrows
+keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
 -- save file
 keymap("n", "zz", ":w<CR>", opts)
 keymap("n", "zq", ":x<CR>", opts)
@@ -44,15 +50,9 @@ keymap("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & he
 keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split window
 
 keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
-keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
+keymap("n", "<leader>tc", ":tabclose<CR>", opts) -- close current tab
 keymap("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 keymap("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
-
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -95,6 +95,7 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 keymap("n", "<leader>sf", "<cmd>Telescope file_browser<cr>", opts)
 
 -- Hop --
+keymap("n", "f", "<cmd>HopChar1<cr>",opts)
 keymap("n", "<leader>hw", "<cmd>HopWord<cr>",opts)
 keymap("n", "<leader>hc", "<cmd>HopChar1<cr>",opts)
 keymap("n", "<leader>hl", "<cmd>HopLine<cr>",opts)

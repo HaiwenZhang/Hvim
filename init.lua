@@ -21,6 +21,7 @@ require "haiwen.plugins.symbols-outline"
 require "haiwen.plugins.colorizer"
 require "haiwen.plugins.diffview"
 require "haiwen.plugins.toggleterm"
+require "haiwen.plugins.impatient"
 
 -- LSP
 require "haiwen.plugins.lsp.mason"

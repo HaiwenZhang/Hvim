@@ -1,67 +1,52 @@
-local opt = vim.opt -- for conciseness
+local options = {
+  backup = false,                          -- creates a backup file
+  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  cmdheight = 1,                           -- more space in the neovim command line for displaying messages
+  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  conceallevel = 0,                        -- so that `` is visible in markdown files
+  swapfile = false,                        -- creates a swapfile
+  fileencoding = "utf-8",                  -- the encoding written to a file
+  hlsearch = true,                         -- highlight all matches on previous search pattern
+  ignorecase = true,                       -- ignore case in search patterns
+  mouse = "a",                             -- allow the mouse to be used in neovim
+  pumheight = 10,                          -- pop up menu height
+  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  showtabline = 0,                         -- always show tabs
+  smartcase = true,                        -- smart case
+  smartindent = true,                      -- make indenting smarter again
+  splitbelow = true,                       -- force all horizontal splits to go below current window
+  splitright = true,                       -- force all vertical splits to go to the right of current window
+  termguicolors = true,                    -- set term gui colors (most terminals support this)
+  timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
+  undofile = true,                         -- enable persistent undo
+  updatetime = 100,                       -- faster completion (4000ms default)
+  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  expandtab = true,                        -- convert tabs to spaces
+  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
+  tabstop = 2,                             -- insert 2 spaces for a tab
+  cursorline = true,                       -- highlight the current line
+  number = true,                           -- set numbered lines
+  autoindent = true,                       -- copy indent from current line when starting new one
+  laststatus = 3,
+  showcmd = false,
+  ruler = false,
+  relativenumber = false,                   -- set relative numbered lines
+  numberwidth = 4,                         -- set number column width to 2 {default 4}
+  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  wrap = false,                            -- display lines as one long line
+  scrolloff = 8,                           -- is one of my fav
+  sidescrolloff = 8,
+  guifont = "JetBrainsMono Nerd Font:h18",               -- the font used in graphical neovim applications
+  title = true,
+  -- colorcolumn = "80",
+  -- colorcolumn = "120",
 
-opt.backup = false                          -- creates a backup file
+}
 
-opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
-opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-opt.conceallevel = 0                        -- so that `` is visible in markdown files
-opt.swapfile = false                        -- creates a swapfile
-opt.fileencoding = "utf-8"                  -- the encoding written to a file
-opt.hlsearch = true                         -- highlight all matches on previous search pattern
-opt.ignorecase = true                       -- ignore case in search patterns
-opt.mouse = "a"                             -- allow the mouse to be used in neovim
-opt.pumheight = 10                          -- pop up menu height
-opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
-opt.showtabline = 2                         -- always show tabs
-opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
-opt.updatetime = 300                        -- faster completion (4000ms default)
-opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 
--- line numbers
-opt.relativenumber = false -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
 
--- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-
--- line wrapping
-opt.wrap = false -- disable line wrapping
-
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
-opt.smartindent = true                      -- make indenting smarter again
-
--- cursor line
-opt.cursorline = true -- highlight the current cursor line
-
--- appearance
-
--- turn on termguicolors for nightfly colorscheme to work
--- (have to use iterm2 or any other true color terminal)
-opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-
--- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-
--- clipboard
-vim.opt.clipboard:append { 'unnamedplus' }
--- vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
-
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
-
-opt.wrap = false                            -- display lines as one long line
-opt.scrolloff = 8                           -- is one of my fav
-opt.sidescrolloff = 8
-opt.guifont = "JetBrainsMono Nerd Font:h18"               -- the font used in graphical neovim applications
-opt.undofile = true                         -- enable persistent undo
-
-opt.iskeyword:append("-") -- consider string-string as whole word
+vim.opt.shortmess:append "c"
+vim.opt.iskeyword:append("-") -- consider string-string as whole word

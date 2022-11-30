@@ -40,8 +40,8 @@ return {
     LineModified = "",
     LineRemoved = "",
     FileDeleted = "",
-    FileIgnored = "◌",
-    FileRenamed = "➜",
+    FileIgnored = "",
+    FileRenamed = "",
     FileStaged = "S",
     FileUnmerged = "",
     FileUnstaged = "",
@@ -150,5 +150,11 @@ return {
     Smiley = "ﲃ",
     Package = "",
     CircuitBoard = "",
+  },
+  os = {
+    Linux = "",
+    Ubuntu = "",
+    Gentoo = "",
+    MacOS = "",
   },
 }
