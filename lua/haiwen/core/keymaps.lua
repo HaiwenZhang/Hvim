@@ -108,7 +108,7 @@ keymap("n", "<leader>g", "<cmd>Neogit<cr>", opts)
 keymap("n", "<leader>fs", "<cmd>SymbolsOutlineOpen<cr>", opts)
 
 -- toggleterm --
-keymap("n", "<leader>st", "<md>ToggleTerm<cr>", opts)
+keymap("n", "<leader>tt", "<cmd>ToggleTerm<cr>", opts)
 
 -- dap --
 keymap("n", "<F5>", "<cmd>DapContinue<cr>", opts)
