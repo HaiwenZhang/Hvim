@@ -44,10 +44,10 @@ keymap("n", "<leader>+", "<C-a>", opts) -- increment
 keymap("n", "<leader>-", "<C-x>", opts) -- decrement
 
 -- window management
-keymap("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
-keymap("n", "<leader>sx", ":close<CR>", opts) -- close current split window
+keymap("n", "<leader>wsv", "<C-w>v", opts) -- split window vertically
+keymap("n", "<leader>wsh", "<C-w>s", opts) -- split window horizontally
+keymap("n", "<leader>wse", "<C-w>=", opts) -- make split windows equal width & height
+keymap("n", "<leader>wsx", ":close<CR>", opts) -- close current split window
 
 keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
 keymap("n", "<leader>tc", ":tabclose<CR>", opts) -- close current tab
@@ -88,11 +88,23 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 
-keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-keymap("n", "<leader>sf", "<cmd>Telescope file_browser<cr>", opts)
+-- See `:help telescope.builtin`
+-- See `:help telescope.builtin`
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer]' })
+
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- Hop --
 keymap("n", "f", "<cmd>HopChar1<cr>",opts)

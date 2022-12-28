@@ -73,6 +73,8 @@ return packer.startup(function(use)
   use "folke/neodev.nvim"
   use 'jose-elias-alvarez/null-ls.nvim'
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+   -- Useful status updates for LSP
+  use 'j-hui/fidget.nvim'
 
   -- completion
   use 'hrsh7th/nvim-cmp'
@@ -89,8 +91,11 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use "nvim-telescope/telescope-file-browser.nvim"
+    -- Fuzzy Finder (files, lsp, etc)
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
   -- debugger
   use 'mfussenegger/nvim-dap'

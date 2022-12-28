@@ -36,7 +36,7 @@ local diff = {
     modified = { fg = "#ecbe7b" },
     removed = { fg = "#ec5f67" },
   },
-  cond = hide_in_width_60,
+  cond = hide_in_width,
   separator = "%#SLSeparator#" .. "│ " .. "%*",
 }
 
@@ -62,6 +62,7 @@ local file_name = {
     readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
     unnamed = '[No Name]', -- Text to show for unnamed buffers.
   },
+  cond = hide_in_width,
 }
 
 local filetype = {

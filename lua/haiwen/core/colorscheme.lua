@@ -9,4 +9,4 @@ require('onedarkpro').setup({
   theme = 'onedark_vivid',
 })
 
-vim.cmd("colorscheme onedarkpro")
+vim.cmd("colorscheme onedark")
