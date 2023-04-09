@@ -27,7 +27,7 @@ require "haiwen.plugins.lsp.mason"
 require "haiwen.plugins.lsp.lspconfig"
 require "haiwen.plugins.lsp.lspsaga"
 
-require "haiwen.plugins.dap"
+-- require "haiwen.plugins.dap"
 
 
 -- Keymap

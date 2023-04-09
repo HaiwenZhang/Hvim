@@ -19,7 +19,7 @@ mason_lspconfig.setup({
 		"html",
     "emmet_ls",
 		"cssls",
-		"sumneko_lua",
+		"lua_ls",
     "clangd",
     "pyright"
 	},

@@ -56,7 +56,7 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-lspconfig['sumneko_lua'].setup{
+lspconfig['lua_ls'].setup{
   capabilities = capabilities,
   on_attach = on_attach,
 }
